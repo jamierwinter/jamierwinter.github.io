@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Jamie Winter`s Blog</title>
+        <link>https://jamierwinter.github.io/posts/</link>
+        <description>Recent content in Posts on Jamie Winter`s Blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Wed, 19 Jun 2024 23:13:58 +0100</lastBuildDate><atom:link href="https://jamierwinter.github.io/posts/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>HMMs</title>
+        <link>https://jamierwinter.github.io/posts/hmms/</link>
+        <pubDate>Wed, 19 Jun 2024 23:13:58 +0100</pubDate>
+        
+        <guid>https://jamierwinter.github.io/posts/hmms/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Hidden Markov Models and their Applications</title>
+        <link>https://jamierwinter.github.io/posts/hmmsandtheirapplications/</link>
+        <pubDate>Wed, 19 Jun 2024 22:47:07 +0100</pubDate>
+        
+        <guid>https://jamierwinter.github.io/posts/hmmsandtheirapplications/</guid>
+        <description>&lt;p&gt;Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
