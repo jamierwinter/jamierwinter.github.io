@@ -2,16 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on Jamie Winter</title>
-        <link>http://localhost:1313/page/</link>
+        <link>https://jamierwinter.github.io/page/</link>
         <description>Recent content in Pages on Jamie Winter</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>en-us</language>
-        <lastBuildDate>Thu, 20 Jun 2024 18:40:59 +0100</lastBuildDate><atom:link href="http://localhost:1313/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <language>en-us</language><atom:link href="https://jamierwinter.github.io/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Search</title>
-        <link>http://localhost:1313/page/search/</link>
-        <pubDate>Thu, 20 Jun 2024 18:40:59 +0100</pubDate>
+        <link>https://jamierwinter.github.io/page/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/page/search/</guid>
+        <guid>https://jamierwinter.github.io/page/search/</guid>
         <description></description>
         </item>
         

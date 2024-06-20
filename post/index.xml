@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Jamie Winter</title>
-        <link>http://localhost:1313/post/</link>
+        <link>https://jamierwinter.github.io/post/</link>
         <description>Recent content in Posts on Jamie Winter</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 20 Jun 2024 11:17:01 +0100</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 20 Jun 2024 11:17:01 +0100</lastBuildDate><atom:link href="https://jamierwinter.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Analysing the Efficiency of First Year Maths Modules with Graphs</title>
-        <link>http://localhost:1313/post/graphing_first_year_modules/</link>
+        <link>https://jamierwinter.github.io/post/graphing_first_year_modules/</link>
         <pubDate>Thu, 20 Jun 2024 11:17:01 +0100</pubDate>
         
-        <guid>http://localhost:1313/post/graphing_first_year_modules/</guid>
-        <description>&lt;img src="http://localhost:1313/img/header_graphing_first_year_modules.jpg" alt="Featured image of post Analysing the Efficiency of First Year Maths Modules with Graphs" /&gt;&lt;p&gt;Mathematics is unique as a subject, owing to the modularity of formal mathematical texts: corollaries follow theorems, which follows from lemmas and propositions, which in turn can be followed back to the original definitions underpinning their statements. With this structure in mind, it feels natural consider representing a piece of mathematical text as a graph, representing theorems, lemmas, propositions and corollaries as nodes, with a directed edge between two nodes $A$ and $B$ representing &amp;ldquo;$A$ is used to prove $B$&amp;rdquo;, a so-called &amp;ldquo;proof graph&amp;rdquo;. When the idea first came to me, I considered whether one could create one massive graph, representing the accumulation of all mathematical knowledge across all fields. However, I quickly came to realise that owing to the existence of various proofs of the same theorem, such a graph couldn&amp;rsquo;t possibly be well-defined. But applying this idea to some self-contained mathematical text, say, a textbook or a set of lecture notes should give us a well-defined graph worth studying.&lt;/p&gt;
+        <guid>https://jamierwinter.github.io/post/graphing_first_year_modules/</guid>
+        <description>&lt;img src="https://jamierwinter.github.io/img/header_graphing_first_year_modules.jpg" alt="Featured image of post Analysing the Efficiency of First Year Maths Modules with Graphs" /&gt;&lt;p&gt;Mathematics is unique as a subject, owing to the modularity of formal mathematical texts: corollaries follow theorems, which follows from lemmas and propositions, which in turn can be followed back to the original definitions underpinning their statements. With this structure in mind, it feels natural consider representing a piece of mathematical text as a graph, representing theorems, lemmas, propositions and corollaries as nodes, with a directed edge between two nodes $A$ and $B$ representing &amp;ldquo;$A$ is used to prove $B$&amp;rdquo;, a so-called &amp;ldquo;proof graph&amp;rdquo;. When the idea first came to me, I considered whether one could create one massive graph, representing the accumulation of all mathematical knowledge across all fields. However, I quickly came to realise that owing to the existence of various proofs of the same theorem, such a graph couldn&amp;rsquo;t possibly be well-defined. But applying this idea to some self-contained mathematical text, say, a textbook or a set of lecture notes should give us a well-defined graph worth studying.&lt;/p&gt;
 &lt;h2 id=&#34;why-study-such-a-graph&#34;&gt;Why study such a graph?
 &lt;/h2&gt;&lt;p&gt;Such a graph allows us to capture the structure and dependencies of a mathematical text. One may identify important theorems, or, on the flip-side, unimportant ones. Indeed, algorithms such as PageRank exist which could be applied to this end. In addition, one may implement algorithms such as SimRank to assess the &amp;ldquo;similarity&amp;rdquo; between theorems. The existence of multiple paths between two nodes may signify inefficiencies (redundancies) in the text. Identifying these may allow an author to streamline their text, in turn helping those intent on learning from it to do this in a more efficient way.&lt;/p&gt;
 &lt;h2 id=&#34;how-did-i-do-this&#34;&gt;How did I do this?
@@ -27,11 +27,11 @@
         </item>
         <item>
         <title>Hidden Markov Models and their Applications</title>
-        <link>http://localhost:1313/post/hmmsandtheirapplications/</link>
+        <link>https://jamierwinter.github.io/post/hmmsandtheirapplications/</link>
         <pubDate>Tue, 18 Jun 2024 22:47:07 +0100</pubDate>
         
-        <guid>http://localhost:1313/post/hmmsandtheirapplications/</guid>
-        <description>&lt;img src="http://localhost:1313/img/HMM.png" alt="Featured image of post Hidden Markov Models and their Applications" /&gt;&lt;!-- raw HTML omitted --&gt;
+        <guid>https://jamierwinter.github.io/post/hmmsandtheirapplications/</guid>
+        <description>&lt;img src="https://jamierwinter.github.io/img/HMM.png" alt="Featured image of post Hidden Markov Models and their Applications" /&gt;&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay.&lt;/p&gt;
 &lt;h1 id=&#34;1-introduction&#34;&gt;1: Introduction
 &lt;/h1&gt;&lt;p&gt;In 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&amp;rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.&lt;/p&gt;
