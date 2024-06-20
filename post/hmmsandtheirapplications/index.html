@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
-    <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay.">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay: 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.">
 <title>Hidden Markov Models and their Applications</title>
 
-<link rel='canonical' href='https://jamierwinter.github.io/post/hmmsandtheirapplications/'>
+<link rel='canonical' href='http://localhost:1313/post/hmmsandtheirapplications/'>
 
 <link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="Hidden Markov Models and their Applications">
-<meta property='og:description' content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay.">
-<meta property='og:url' content='https://jamierwinter.github.io/post/hmmsandtheirapplications/'>
+<meta property='og:description' content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay: 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.">
+<meta property='og:url' content='http://localhost:1313/post/hmmsandtheirapplications/'>
 <meta property='og:site_name' content='Jamie Winter`s Blog'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-06-18T22:47:07&#43;01:00'/><meta property='article:modified_time' content='2024-06-18T22:47:07&#43;01:00'/>
 <meta name="twitter:title" content="Hidden Markov Models and their Applications">
-<meta name="twitter:description" content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay.">
+<meta name="twitter:description" content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay: 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.">
   
 
 
@@ -153,7 +153,7 @@
 
 
                 <time class="article-time--reading">
-                    1 minute read
+                    2 minute read
                 </time>
             </div>
         
@@ -168,7 +168,18 @@
     <section class="article-content">
     
     
-    <p>Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay.</p>
+    <!-- raw HTML omitted -->
+<p>Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay:</p>
+<h1 id="1-introduction">1: Introduction
+</h1><p>In 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.</p>
+<h2 id="the-weak-law-of-large-numbers">The Weak Law of Large Numbers
+</h2><p>Suppose $X_1, X_2,\dots$ are independent and identically distributed random variables with finite mean $\mu$ and variance $\sigma^2$, then the sample mean ${\overline{X}_n}\coloneqq \frac{1}{n}(X_1 + \dots + X_n)$  converges to $\mu$ in probability as $n\rightarrow\infty$.</p>
+<p>Nekrasov (incorrectly) claimed that independence was not just a sufficient condition for the WLLN to hold, but also a necessary one. That is, if a sequence of random variables were to conform to the WLLN, then the independence of these random variables would be guaranteed as a consequence. Since contemporary data representative of human decision-making, such as crime statistics, appeared to follow the WLLN, Nekrasov argued that human decision-making and actions must be independent, and thus in some sense expressions of free will.</p>
+<p>Andrey Markov, who was, importantly, secular, lambasted this claim, describing Nekrasov&rsquo;s work as &ldquo;an abuse of mathematics&rdquo;. However, Markov&rsquo;s grievances weren&rsquo;t rooted in any ideological or theological differences, but rather Nekrasov&rsquo;s assumption that independence was necessary for the\WLLN to hold, which he set out to disprove by providing a counterexample; the result&mdash; the eponymous Markov chain.</p>
+<p>What emerged as a mere counterexample to settle a debate in mathematical theology has since been rigorously studied and adapted, resulting in the development of a multitude of &ldquo;Markov Models&rdquo;, of which one of the most important is known as the hidden Markov model (HMM), which today has applications across data science, linguistics, epidemiology, finance, and physics. HMMs have also been a foundational and widely used technique in AI research for several decades, meaning that over 100 years since their conception, Markov chains still have theological relevance, as humanity looks to &lsquo;play God&rsquo; through the development of artificial intelligence.</p>
+<p>In this essay, I will first define the concept of a Markov chain (assuming a brief familiarity with state transition diagrams) and develop the necessary theory for us to then adapt this into the hidden Markov model, which we will study for the remainder of the essay.</p>
+<h1 id="2-markov-chains">2: Markov Chains
+</h1><!-- raw HTML omitted -->
 
 </section>
 
@@ -179,6 +190,30 @@
     </footer>
 
 
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.body, {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ],
+            ignoredClasses: ["gist"]
+        });})
+</script>
     
 </article>
 
@@ -192,6 +227,11 @@
     
 
     <footer class="site-footer">
+    <script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</script>
+
     <section class="copyright">
         &copy; 
         
