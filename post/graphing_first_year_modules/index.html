@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay: 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.">
-<title>Hidden Markov Models and their Applications</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Mathematics is unique as a subject, owing to the modularity of formal mathematical texts: corollaries follow theorems, which follows from lemmas and propositions, which in turn can be followed back to the original definitions underpinning their statements. With this structure in mind, it feels natural consider representing a piece of mathematical text as a graph, representing theorems, lemmas, propositions and corollaries as nodes, with a directed edge between two nodes $A$ and $B$ representing &ldquo;$A$ is used to prove $B$&rdquo;, a so-called &ldquo;proof graph&rdquo;.">
+<title>Analysing the Efficiency of First Year Maths Modules with Graphs</title>
 
-<link rel='canonical' href='http://localhost:1313/post/hmmsandtheirapplications/'>
+<link rel='canonical' href='http://localhost:1313/post/graphing_first_year_modules/'>
 
-<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="Hidden Markov Models and their Applications">
-<meta property='og:description' content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay: 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.">
-<meta property='og:url' content='http://localhost:1313/post/hmmsandtheirapplications/'>
+<link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="Analysing the Efficiency of First Year Maths Modules with Graphs">
+<meta property='og:description' content="Mathematics is unique as a subject, owing to the modularity of formal mathematical texts: corollaries follow theorems, which follows from lemmas and propositions, which in turn can be followed back to the original definitions underpinning their statements. With this structure in mind, it feels natural consider representing a piece of mathematical text as a graph, representing theorems, lemmas, propositions and corollaries as nodes, with a directed edge between two nodes $A$ and $B$ representing &ldquo;$A$ is used to prove $B$&rdquo;, a so-called &ldquo;proof graph&rdquo;.">
+<meta property='og:url' content='http://localhost:1313/post/graphing_first_year_modules/'>
 <meta property='og:site_name' content='Jamie Winter&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-06-18T22:47:07&#43;01:00'/><meta property='article:modified_time' content='2024-06-18T22:47:07&#43;01:00'/>
-<meta name="twitter:title" content="Hidden Markov Models and their Applications">
-<meta name="twitter:description" content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay: 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.">
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-06-20T11:17:01&#43;01:00'/><meta property='article:modified_time' content='2024-06-20T11:17:01&#43;01:00'/><meta property='og:image' content='http://localhost:1313/img/header_graphing_first_year_modules.jpg' />
+<meta name="twitter:title" content="Analysing the Efficiency of First Year Maths Modules with Graphs">
+<meta name="twitter:description" content="Mathematics is unique as a subject, owing to the modularity of formal mathematical texts: corollaries follow theorems, which follows from lemmas and propositions, which in turn can be followed back to the original definitions underpinning their statements. With this structure in mind, it feels natural consider representing a piece of mathematical text as a graph, representing theorems, lemmas, propositions and corollaries as nodes, with a directed edge between two nodes $A$ and $B$ representing &ldquo;$A$ is used to prove $B$&rdquo;, a so-called &ldquo;proof graph&rdquo;."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/img/header_graphing_first_year_modules.jpg' />
   
 
 
@@ -108,15 +109,23 @@
     
 
             <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/post/graphing_first_year_modules/">
+                
+                    <img src="/img/header_graphing_first_year_modules.jpg" loading="lazy" alt="Featured image of post Analysing the Efficiency of First Year Maths Modules with Graphs" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
 
     <div class="article-title-wrapper">
         <h2 class="article-title">
-            <a href="/post/hmmsandtheirapplications/">Hidden Markov Models and their Applications</a>
+            <a href="/post/graphing_first_year_modules/">Analysing the Efficiency of First Year Maths Modules with Graphs</a>
         </h2>
     
         
@@ -138,7 +147,7 @@
   <path d="M3 11h16" />
   <path d="M18 16.496v1.504l1 1" />
 </svg>
-                <time class="article-time--published">Jun 18, 2024</time>
+                <time class="article-time--published">Jun 20, 2024</time>
             </div>
         
 
@@ -168,18 +177,17 @@
     <section class="article-content">
     
     
-    <!-- raw HTML omitted -->
-<p>Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay:</p>
-<h1 id="1-introduction">1: Introduction
-</h1><p>In 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.</p>
-<h2 id="the-weak-law-of-large-numbers">The Weak Law of Large Numbers
-</h2><p>Suppose $X_1, X_2,\dots$ are independent and identically distributed random variables with finite mean $\mu$ and variance $\sigma^2$, then the sample mean ${\overline{X}_n}\coloneqq \frac{1}{n}(X_1 + \dots + X_n)$  converges to $\mu$ in probability as $n\rightarrow\infty$.</p>
-<p>Nekrasov (incorrectly) claimed that independence was not just a sufficient condition for the WLLN to hold, but also a necessary one. That is, if a sequence of random variables were to conform to the WLLN, then the independence of these random variables would be guaranteed as a consequence. Since contemporary data representative of human decision-making, such as crime statistics, appeared to follow the WLLN, Nekrasov argued that human decision-making and actions must be independent, and thus in some sense expressions of free will.</p>
-<p>Andrey Markov, who was, importantly, secular, lambasted this claim, describing Nekrasov&rsquo;s work as &ldquo;an abuse of mathematics&rdquo;. However, Markov&rsquo;s grievances weren&rsquo;t rooted in any ideological or theological differences, but rather Nekrasov&rsquo;s assumption that independence was necessary for the WLLN to hold, which he set out to disprove by providing a counterexample; the result&mdash; the eponymous Markov chain.</p>
-<p>What emerged as a mere counterexample to settle a debate in mathematical theology has since been rigorously studied and adapted, resulting in the development of a multitude of &ldquo;Markov Models&rdquo;, of which one of the most important is known as the hidden Markov model (HMM), which today has applications across data science, linguistics, epidemiology, finance, and physics. HMMs have also been a foundational and widely used technique in AI research for several decades, meaning that over 100 years since their conception, Markov chains still have theological relevance, as humanity looks to &lsquo;play God&rsquo; through the development of artificial intelligence.</p>
-<p>In this essay, I will first define the concept of a Markov chain (assuming a brief familiarity with state transition diagrams) and develop the necessary theory for us to then adapt this into the hidden Markov model, which we will study for the remainder of the essay.</p>
-<h1 id="2-markov-chains">2: Markov Chains
-</h1><!-- raw HTML omitted -->
+    <p>Mathematics is unique as a subject, owing to the modularity of formal mathematical texts: corollaries follow theorems, which follows from lemmas and propositions, which in turn can be followed back to the original definitions underpinning their statements. With this structure in mind, it feels natural consider representing a piece of mathematical text as a graph, representing theorems, lemmas, propositions and corollaries as nodes, with a directed edge between two nodes $A$ and $B$ representing &ldquo;$A$ is used to prove $B$&rdquo;, a so-called &ldquo;proof graph&rdquo;. When the idea first came to me, I considered whether one could create one massive graph, representing the accumulation of all mathematical knowledge across all fields. However, I quickly came to realise that owing to the existence of various proofs of the same theorem, such a graph couldn&rsquo;t possibly be well-defined. But applying this idea to some self-contained mathematical text, say, a textbook or a set of lecture notes should give us a well-defined graph worth studying.</p>
+<h2 id="why-study-such-a-graph">Why study such a graph?
+</h2><p>Such a graph allows us to capture the structure and dependencies of a mathematical text. One may identify important theorems, or, on the flip-side, unimportant ones. Indeed, algorithms such as PageRank exist which could be applied to this end. In addition, one may implement algorithms such as SimRank to assess the &ldquo;similarity&rdquo; between theorems. The existence of multiple paths between two nodes may signify inefficiencies (redundancies) in the text. Identifying these may allow an author to streamline their text, in turn helping those intent on learning from it to do this in a more efficient way.</p>
+<h2 id="how-did-i-do-this">How did I do this?
+</h2><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>In order to do this, I used Memgraph lab, which can be downloaded <em><a class="link" href="https://memgraph.com"  target="_blank" rel="noopener"
+    >here</a></em>. I created</p>
+<h2 id="case-study-algebra-ii-groups-and-rings">Case Study: Algebra II: Groups and Rings
+</h2><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
 </section>
 

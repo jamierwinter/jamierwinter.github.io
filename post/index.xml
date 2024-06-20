@@ -1,19 +1,48 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on Jamie Winter`s Blog</title>
+        <title>Posts on Jamie Winter&#39;s Blog</title>
         <link>http://localhost:1313/post/</link>
-        <description>Recent content in Posts on Jamie Winter`s Blog</description>
+        <description>Recent content in Posts on Jamie Winter&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Tue, 18 Jun 2024 22:47:07 +0100</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 20 Jun 2024 11:17:01 +0100</lastBuildDate><atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Analysing the Efficiency of First Year Maths Modules with Graphs</title>
+        <link>http://localhost:1313/post/graphing_first_year_modules/</link>
+        <pubDate>Thu, 20 Jun 2024 11:17:01 +0100</pubDate>
+        
+        <guid>http://localhost:1313/post/graphing_first_year_modules/</guid>
+        <description>&lt;img src="http://localhost:1313/img/header_graphing_first_year_modules.jpg" alt="Featured image of post Analysing the Efficiency of First Year Maths Modules with Graphs" /&gt;&lt;p&gt;Mathematics is unique as a subject, owing to the modularity of formal mathematical texts: corollaries follow theorems, which follows from lemmas and propositions, which in turn can be followed back to the original definitions underpinning their statements. With this structure in mind, it feels natural consider representing a piece of mathematical text as a graph, representing theorems, lemmas, propositions and corollaries as nodes, with a directed edge between two nodes $A$ and $B$ representing &amp;ldquo;$A$ is used to prove $B$&amp;rdquo;, a so-called &amp;ldquo;proof graph&amp;rdquo;. When the idea first came to me, I considered whether one could create one massive graph, representing the accumulation of all mathematical knowledge across all fields. However, I quickly came to realise that owing to the existence of various proofs of the same theorem, such a graph couldn&amp;rsquo;t possibly be well-defined. But applying this idea to some self-contained mathematical text, say, a textbook or a set of lecture notes should give us a well-defined graph worth studying.&lt;/p&gt;
+&lt;h2 id=&#34;why-study-such-a-graph&#34;&gt;Why study such a graph?
+&lt;/h2&gt;&lt;p&gt;Such a graph allows us to capture the structure and dependencies of a mathematical text. One may identify important theorems, or, on the flip-side, unimportant ones. Indeed, algorithms such as PageRank exist which could be applied to this end. In addition, one may implement algorithms such as SimRank to assess the &amp;ldquo;similarity&amp;rdquo; between theorems. The existence of multiple paths between two nodes may signify inefficiencies (redundancies) in the text. Identifying these may allow an author to streamline their text, in turn helping those intent on learning from it to do this in a more efficient way.&lt;/p&gt;
+&lt;h2 id=&#34;how-did-i-do-this&#34;&gt;How did I do this?
+&lt;/h2&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;In order to do this, I used Memgraph lab, which can be downloaded &lt;em&gt;&lt;a class=&#34;link&#34; href=&#34;https://memgraph.com&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;here&lt;/a&gt;&lt;/em&gt;. I created&lt;/p&gt;
+&lt;h2 id=&#34;case-study-algebra-ii-groups-and-rings&#34;&gt;Case Study: Algebra II: Groups and Rings
+&lt;/h2&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+</description>
+        </item>
+        <item>
         <title>Hidden Markov Models and their Applications</title>
         <link>http://localhost:1313/post/hmmsandtheirapplications/</link>
         <pubDate>Tue, 18 Jun 2024 22:47:07 +0100</pubDate>
         
         <guid>http://localhost:1313/post/hmmsandtheirapplications/</guid>
-        <description>&lt;p&gt;Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay.&lt;/p&gt;
-&lt;p&gt;\int_0^6 x^2 dx = \text{something}&lt;/p&gt;
+        <description>&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay:&lt;/p&gt;
+&lt;h1 id=&#34;1-introduction&#34;&gt;1: Introduction
+&lt;/h1&gt;&lt;p&gt;In 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&amp;rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.&lt;/p&gt;
+&lt;h2 id=&#34;the-weak-law-of-large-numbers&#34;&gt;The Weak Law of Large Numbers
+&lt;/h2&gt;&lt;p&gt;Suppose $X_1, X_2,\dots$ are independent and identically distributed random variables with finite mean $\mu$ and variance $\sigma^2$, then the sample mean ${\overline{X}_n}\coloneqq \frac{1}{n}(X_1 + \dots + X_n)$  converges to $\mu$ in probability as $n\rightarrow\infty$.&lt;/p&gt;
+&lt;p&gt;Nekrasov (incorrectly) claimed that independence was not just a sufficient condition for the WLLN to hold, but also a necessary one. That is, if a sequence of random variables were to conform to the WLLN, then the independence of these random variables would be guaranteed as a consequence. Since contemporary data representative of human decision-making, such as crime statistics, appeared to follow the WLLN, Nekrasov argued that human decision-making and actions must be independent, and thus in some sense expressions of free will.&lt;/p&gt;
+&lt;p&gt;Andrey Markov, who was, importantly, secular, lambasted this claim, describing Nekrasov&amp;rsquo;s work as &amp;ldquo;an abuse of mathematics&amp;rdquo;. However, Markov&amp;rsquo;s grievances weren&amp;rsquo;t rooted in any ideological or theological differences, but rather Nekrasov&amp;rsquo;s assumption that independence was necessary for the WLLN to hold, which he set out to disprove by providing a counterexample; the result&amp;mdash; the eponymous Markov chain.&lt;/p&gt;
+&lt;p&gt;What emerged as a mere counterexample to settle a debate in mathematical theology has since been rigorously studied and adapted, resulting in the development of a multitude of &amp;ldquo;Markov Models&amp;rdquo;, of which one of the most important is known as the hidden Markov model (HMM), which today has applications across data science, linguistics, epidemiology, finance, and physics. HMMs have also been a foundational and widely used technique in AI research for several decades, meaning that over 100 years since their conception, Markov chains still have theological relevance, as humanity looks to &amp;lsquo;play God&amp;rsquo; through the development of artificial intelligence.&lt;/p&gt;
+&lt;p&gt;In this essay, I will first define the concept of a Markov chain (assuming a brief familiarity with state transition diagrams) and develop the necessary theory for us to then adapt this into the hidden Markov model, which we will study for the remainder of the essay.&lt;/p&gt;
+&lt;h1 id=&#34;2-markov-chains&#34;&gt;2: Markov Chains
+&lt;/h1&gt;&lt;!-- raw HTML omitted --&gt;
 </description>
         </item>
         
