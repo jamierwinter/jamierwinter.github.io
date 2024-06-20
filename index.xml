@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Jamie Winter&#39;s Blog</title>
+        <title>Jamie Winter</title>
         <link>http://localhost:1313/</link>
-        <description>Recent content on Jamie Winter&#39;s Blog</description>
+        <description>Recent content on Jamie Winter</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 20 Jun 2024 11:17:01 +0100</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 20 Jun 2024 18:40:59 +0100</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Search</title>
+        <link>http://localhost:1313/page/search/</link>
+        <pubDate>Thu, 20 Jun 2024 18:40:59 +0100</pubDate>
+        
+        <guid>http://localhost:1313/page/search/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Analysing the Efficiency of First Year Maths Modules with Graphs</title>
         <link>http://localhost:1313/post/graphing_first_year_modules/</link>
         <pubDate>Thu, 20 Jun 2024 11:17:01 +0100</pubDate>
@@ -31,8 +39,8 @@
         <pubDate>Tue, 18 Jun 2024 22:47:07 +0100</pubDate>
         
         <guid>http://localhost:1313/post/hmmsandtheirapplications/</guid>
-        <description>&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay:&lt;/p&gt;
+        <description>&lt;img src="http://localhost:1313/img/HMM.png" alt="Featured image of post Hidden Markov Models and their Applications" /&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay.&lt;/p&gt;
 &lt;h1 id=&#34;1-introduction&#34;&gt;1: Introduction
 &lt;/h1&gt;&lt;p&gt;In 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&amp;rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.&lt;/p&gt;
 &lt;h2 id=&#34;the-weak-law-of-large-numbers&#34;&gt;The Weak Law of Large Numbers

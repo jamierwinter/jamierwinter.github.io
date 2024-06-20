@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay: 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay. 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.">
 <title>Hidden Markov Models and their Applications</title>
 
 <link rel='canonical' href='http://localhost:1313/post/hmmsandtheirapplications/'>
 
 <link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="Hidden Markov Models and their Applications">
-<meta property='og:description' content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay: 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.">
+<meta property='og:description' content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay. 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.">
 <meta property='og:url' content='http://localhost:1313/post/hmmsandtheirapplications/'>
-<meta property='og:site_name' content='Jamie Winter&#39;s Blog'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-06-18T22:47:07&#43;01:00'/><meta property='article:modified_time' content='2024-06-18T22:47:07&#43;01:00'/>
+<meta property='og:site_name' content='Jamie Winter'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-06-18T22:47:07&#43;01:00'/><meta property='article:modified_time' content='2024-06-18T22:47:07&#43;01:00'/><meta property='og:image' content='http://localhost:1313/img/HMM.png' />
 <meta name="twitter:title" content="Hidden Markov Models and their Applications">
-<meta name="twitter:description" content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay: 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.">
+<meta name="twitter:description" content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay. 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory."><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/img/HMM.png' />
   
 
 
@@ -42,7 +43,7 @@
         }
     })();
 </script>
-<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -70,11 +71,30 @@
         
         
         <div class="site-meta">
-            <h1 class="site-name"><a href="/">Jamie Winter&#39;s Blog</a></h1>
-            <h2 class="site-description"></h2>
+            <h1 class="site-name"><a href="/">Jamie Winter</a></h1>
+            <h2 class="site-description">Hi, my name is Jamie; I am an incoming 4th year maths student at the University of Warwick. I created this website to keep track of my personal projects as I head into my final year of uni. I hope you find any of it interesting / useful!</h2>
         </div>
     </header><ol class="menu" id="main-menu">
         
+        
+        
+        <li >
+            <a href='/page/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
         
         <li class="menu-bottom-section">
             <ol class="menu">
@@ -108,8 +128,16 @@
     
 
             <main class="main full-width">
-    <article class="main-article">
+    <article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <a href="/post/hmmsandtheirapplications/">
+                
+                    <img src="/img/HMM.png" loading="lazy" alt="Featured image of post Hidden Markov Models and their Applications" />
+                
+            </a>
+        </div>
+    
 
     <div class="article-details">
     
@@ -169,7 +197,7 @@
     
     
     <!-- raw HTML omitted -->
-<p>Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay:</p>
+<p>Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay.</p>
 <h1 id="1-introduction">1: Introduction
 </h1><p>In 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.</p>
 <h2 id="the-weak-law-of-large-numbers">The Weak Law of Large Numbers
@@ -235,7 +263,7 @@
     <section class="copyright">
         &copy; 
         
-        2024 Jamie Winter&#39;s Blog
+        2024 Jamie Winter
     </section>
     
 </footer>
