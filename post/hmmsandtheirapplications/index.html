@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr">
     <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay. 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.">
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay. 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) [1] to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory [2].">
 <title>Hidden Markov Models and their Applications</title>
 
 <link rel='canonical' href='https://jamierwinter.github.io/post/hmmsandtheirapplications/'>
 
 <link rel="stylesheet" href="/scss/style.min.e8c7fca7d1c9294aa7a4f3426c225ee26540f7d94e39be0b5a4a5c8a49ca5a25.css"><meta property='og:title' content="Hidden Markov Models and their Applications">
-<meta property='og:description' content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay. 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.">
+<meta property='og:description' content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay. 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) [1] to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory [2].">
 <meta property='og:url' content='https://jamierwinter.github.io/post/hmmsandtheirapplications/'>
 <meta property='og:site_name' content='Jamie Winter'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-06-18T22:47:07&#43;01:00'/><meta property='article:modified_time' content='2024-06-18T22:47:07&#43;01:00'/><meta property='og:image' content='https://jamierwinter.github.io/img/HMM.png' />
 <meta name="twitter:title" content="Hidden Markov Models and their Applications">
-<meta name="twitter:description" content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay. 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory."><meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay. 1: Introduction\rIn 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) [1] to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory [2]."><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://jamierwinter.github.io/img/HMM.png' />
   
 
@@ -181,7 +181,7 @@
 
 
                 <time class="article-time--reading">
-                    2 minute read
+                    8 minute read
                 </time>
             </div>
         
@@ -199,15 +199,119 @@
     <!-- raw HTML omitted -->
 <p>Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay.</p>
 <h1 id="1-introduction">1: Introduction
-</h1><p>In 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.</p>
-<h2 id="the-weak-law-of-large-numbers">The Weak Law of Large Numbers
-</h2><p>Suppose $X_1, X_2,\dots$ are independent and identically distributed random variables with finite mean $\mu$ and variance $\sigma^2$, then the sample mean ${\overline{X}_n}\coloneqq \frac{1}{n}(X_1 + \dots + X_n)$  converges to $\mu$ in probability as $n\rightarrow\infty$.</p>
-<p>Nekrasov (incorrectly) claimed that independence was not just a sufficient condition for the WLLN to hold, but also a necessary one. That is, if a sequence of random variables were to conform to the WLLN, then the independence of these random variables would be guaranteed as a consequence. Since contemporary data representative of human decision-making, such as crime statistics, appeared to follow the WLLN, Nekrasov argued that human decision-making and actions must be independent, and thus in some sense expressions of free will.</p>
-<p>Andrey Markov, who was, importantly, secular, lambasted this claim, describing Nekrasov&rsquo;s work as &ldquo;an abuse of mathematics&rdquo;. However, Markov&rsquo;s grievances weren&rsquo;t rooted in any ideological or theological differences, but rather Nekrasov&rsquo;s assumption that independence was necessary for the WLLN to hold, which he set out to disprove by providing a counterexample; the result&mdash; the eponymous Markov chain.</p>
+</h1><p>In 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&rsquo;s Weak Law of Large Numbers (WLLN) <strong>[1]</strong> to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory <strong>[2]</strong>.</p>
+<p><strong>The Weak Law of Large Numbers:</strong> <em>Suppose $X_1, X_2,\dots$ are independent and identically distributed random variables with finite mean $\mu$ and variance $\sigma^2$, then the sample mean ${\overline{X}_n}\coloneqq \frac{1}{n}(X_1 + \dots + X_n)$  converges to $\mu$ in probability as $n\rightarrow\infty$.</em></p>
+<p>Nekrasov (incorrectly) claimed that independence was not just a sufficient condition for the WLLN to hold, but also a necessary one. That is, if a sequence of random variables were to conform to the WLLN, then the independence of these random variables would be guaranteed as a consequence. Since contemporary data representative of human decision-making, such as crime statistics, appeared to follow the WLLN <strong>[3]</strong>, Nekrasov argued that human decision-making and actions must be independent, and thus in some sense expressions of free will.</p>
+<p>Andrey Markov, who was, importantly, secular, lambasted this claim, describing Nekrasov&rsquo;s work as &ldquo;an abuse of mathematics&rdquo;. However, Markov&rsquo;s grievances weren&rsquo;t rooted in any ideological or theological differences, but rather Nekrasov&rsquo;s assumption that independence was necessary for the WLLN to hold, which he set out to disprove by providing a counterexample; the result&mdash; the eponymous Markov chain <strong>[4]</strong>.</p>
 <p>What emerged as a mere counterexample to settle a debate in mathematical theology has since been rigorously studied and adapted, resulting in the development of a multitude of &ldquo;Markov Models&rdquo;, of which one of the most important is known as the hidden Markov model (HMM), which today has applications across data science, linguistics, epidemiology, finance, and physics. HMMs have also been a foundational and widely used technique in AI research for several decades, meaning that over 100 years since their conception, Markov chains still have theological relevance, as humanity looks to &lsquo;play God&rsquo; through the development of artificial intelligence.</p>
 <p>In this essay, I will first define the concept of a Markov chain (assuming a brief familiarity with state transition diagrams) and develop the necessary theory for us to then adapt this into the hidden Markov model, which we will study for the remainder of the essay.</p>
 <h1 id="2-markov-chains">2: Markov Chains
-</h1><!-- raw HTML omitted -->
+</h1><p>From its origins in the WLLN, we know that a Markov chain is going to look like a sequence of random variables. We now formalise this notion. Throughout this section we will closely follow the definitions provided in ST202 Stochastic Processes <strong>[5]</strong> (a module offered by Warwick University&rsquo;s stats department).</p>
+<p><strong>Stochastic Processes:</strong> <em>A stochastic process is a family $\{ X_i : i \in \mathcal{T} \}$ of random variables, where $\mathcal{T}$ is an indexing set. When $\mathcal{T}$ has finite or countably infinite cardinality, we say ${X_i:i \in \mathcal{T}}$ is a \emph{discrete-time stochastic process}.</em></p>
+<p>Since in this essay we will always use $\mathbb{N}_0$ as our indexing set, we will from now denote a stochastic process by $(X_n)_{n \geq 0}$. We will use $I$ to denote the state space for each $X_n$, and refer to a given $i \in I$ as a <em>state</em>. By default these state spaces will be labelled ${1,2,\dots m}$ in the case $\lvert I \rvert~=~m \in \mathbb{N}$ and ${1,2,\dots}$ when $I$ is infinite. Finally, given a stochastic process $(X_n)_{n \geq 0}$, $n \in \mathbb{N}$ and some states $i$ and $j$, we will denote the probability of the stochastic process moving from the state $i$ to $j$ by $P_{ij}$. That is, $P_{ij} \coloneqq \mathbb{P}(X_{n+1}=j \mid X_n=i)$.</p>
+<p><strong>The Markov Property:</strong> <em>A stochastic process $(X_n)_{n \geq 0}$ is said to have the Markov property if $\forall n \in \mathbb{N}$, and for any choice of states $i_0,\dots,i_{n+1} \in I$ we have
+$$\mathbb{P}(X_{n+1}\hspace{-0.1cm}=i_{n+1} \mid X_n\hspace{-0.1cm}=i_n,\dots,X_1=i_1,X_0=i_0)=\mathbb{P}(X_{n+1}=i_{n+1} \mid X_n=i_n)$$ whenever the involved conditional probabilities are defined.</em></p>
+<p><strong>Markov Chains:</strong> <em>A discrete-time stochastic process $(X_n)_{n \geq 0}$ with state space $I$ is called a Markov chain if:</em><br>
+i.) <em>$(X_n)_{n \geq 0}$ has the Markov property,</em><br>
+ii.) <em>$\sum_{j \in I}P_{ij}=1$ $\forall i \in I$.</em><br>
+<em>When $\lvert I \rvert &lt; \lvert \mathbb{N} \rvert$ we refer to the Markov chain $(X_n)_{n \geq 0}$ as \emph{finite}.</em></p>
+<p>Intuitively, the definition of the Markov property tells us that, given a Markov chain $(X_n)_{n \geq 0}$ in some state at time n (i.e. $X_n=i_n$), the next state the chain enters depends solely on $X_n$ rather than any previous states.</p>
+<h3 id="example-a-simple-weather-model">Example: A Simple Weather Model
+</h3><p>We consider a simple weather model for a town, where on any given day the weather is in one of three states: 1.) &ldquo;Sunny&rdquo;, 2.) &ldquo;Cloudy&rdquo;, 3.) &ldquo;Rainy&rdquo;. If the weather is sunny on a given day, it will be sunny the next with probability 0.6, cloudy with probability 0.3, or rainy with probability 0.1. Similarly, if it is cloudy on a given day, it will be sunny the next with probability 0.2, cloudy with probability 0.4, or rainy with probability 0.4. Finally, if it is rainy on a given day then it&rsquo;ll be cloudy the next with probability 0.6 or rainy with probability 0.4.</p>
+<p>This can be represented by a Markov chain because the probability of the weather moving from one state to another only depends on the current weather state (property i), and the sum of the probabilities of moving from a given state to each other state is 1 (property ii). These two properties are encoded within the definition of a state transition diagram, and so we have a correspondence between state transition diagrams and Markov chains.</p>
+<p><img src="/img/HMM_1.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Representation of aforementioned example by a Markov chain"
+	
+	
+></p>
+<p>The state transition diagram used above shows us the three possible states our Markov chain can be in, as well as the probabilities of moving between each of these states over a single time-step, which we refer to as \emph{transition probabilities}. In this instance, we take the state space $I={1,2,3}$, corresponding to the &ldquo;Sunny&rdquo;, &ldquo;Cloudy&rdquo;, and &ldquo;Rainy&rdquo; states respectively.</p>
+<p><strong>Transition Matrices:</strong> <em>Given a Markov chain $(X_n)_{n \geq 0}$ with finite state space $I$ such that $\lvert I \rvert = m$, we define its stochastic matrix or transition matrix as the $m\times m$ matrix $P$ with</em>
+$$ P \coloneqq
+\begin{pmatrix}
+P_{11} &amp; P_{12} &amp; \cdots &amp; P_{1m} \\
+P_{21} &amp; P_{22} &amp; \cdots &amp; P_{2m} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+P_{m1} &amp; P_{m2} &amp; \cdots &amp; P_{mm}
+\end{pmatrix} $$</p>
+<p><em>where $P_{ij} = \mathbb{P}(X_{m+1}=j \mid X_m=i)$ as before.</em></p>
+<p>Referring back to the previous example, we can see that the stochastic matrix for the above state transition diagram is given by
+\begin{equation*}
+P =
+\begin{pmatrix}
+0.6 &amp; 0.3 &amp; 0.1 \\
+0.2 &amp; 0.4 &amp; 0.4 \\
+0 &amp; 0.6 &amp; 0.4
+\end{pmatrix}
+\end{equation*}</p>
+<h3 id="the-initial-distribution-of-a-markov-chain">The Initial Distribution of a Markov Chain
+</h3><p>So far we have related the state of a Markov chain a time $n$ to its state at time $n+1$, however right now we don&rsquo;t have a good notion of what state the chain starts in. We introduce the notion of an &ldquo;initial distribution&rdquo; to address this.</p>
+<p><strong>Initial distributions:</strong> <em>The row vector $\lambda=[\lambda_1,\dots,\lambda_m]$ is called an initial distribution of a Markov chain $(X_n)_{n \geq 0}$ with $\lvert I \rvert = m$ if:</em><br>
+i.) <em>$\sum_{i=1}^m {\lambda}_i=1$</em>,<br>
+ii.) <em>${\lambda}_i \geq 0$ for all $i \in I$</em>,<br>
+iii.) <em>$X_0 \sim \lambda$. i.e. $\mathbb{P}(X_0=i)=\lambda_i$  $\forall i \in I$</em></p>
+<p>For example, consider the Markov chain $(X_n)_{n \geq 0}$ with $I={1,2}$ and corresponding stochastic matrix $P$ and initial distribution $\lambda$ given by
+\begin{equation*}
+P =
+\begin{pmatrix}
+0 &amp; 1 \
+2/5 &amp; 3/5 \
+\end{pmatrix}
+\hspace{1cm}
+\lambda=
+\begin{bmatrix}
+\frac{2}{3} &amp; \frac{1}{3}
+\end{bmatrix}
+\end{equation*}
+Suppose we want to find $\mathbb{P}(X_2=1)$. Noting that $\mathbb{P}(X_0=1) = \frac{2}{3}$ and $\mathbb{P}(X_0=2) = \frac{1}{3}$ from our initial distribution $\lambda$, we proceed as follows, first applying the Law of Total Probability:
+\begin{align*}
+\mathbb{P}(X_2=1)
+&amp;= \mathbb{P}(X_2=1 \mid X_1=1)\mathbb{P}(X_1=1) + \mathbb{P}(X_2=1 \mid X_1=2)\mathbb{P}(X_1=2)\\
+&amp;=P_{1,1}\mathbb{P}(X_1=1)+ P_{2,1}\mathbb{P}(X_1=2)\\
+&amp;=\frac{2}{5}\mathbb{P}(X_1=2)\\
+&amp;=\frac{2}{5}(\mathbb{P}(X_1\hspace{-0.1cm}=2 \mid X_0\hspace{-0.1cm}= 1)\mathbb{P}(X_0\hspace{-0.1cm}=1) + \mathbb{P}(X_1\hspace{-0.1cm}=2 \mid X_0\hspace{-0.1cm}=2)\mathbb{P}(X_0\hspace{-0.1cm}=2))\\
+&amp;=\frac{2}{5}(P_{1,2}\mathbb{P}(X_0=1) + P_{2,2}\mathbb{P}(X_0=2))\\
+&amp;=\frac{2}{5}(\frac{2}{3}\cdot1+\frac{3}{5}\cdot\frac{1}{3})\\
+&amp;=\frac{26}{75}
+\end{align*}</p>
+<h3 id="the-stationary-distribution-of-a-markov-chain">The Stationary Distribution of a Markov Chain
+</h3><p>lorem ipsum</p>
+<h1 id="references">References
+</h1><p>[1] Krys Latuszynski, Alice Kirichenko, Anthony Lee, and Wilfrid S
+Kendall. ST220 Introduction to Mathematical Statistics, Lecture Notes,
+University of Warwick. 2022.</p>
+<p>[2] Pavel Nekrasov. The Philosophy and Logic of Science of Mass Phenom-
+ena in Human Activity. Moscow, 1902 (In Russian).</p>
+<p>[3] Brian Hayes. “First links in the Markov chain”. American Scientist,
+101:92–96, 2013.</p>
+<p>[4] A. A. Markov. “Extension of the law of large numbers to dependent
+quantities”. Proceedings of the Physical and Mathematical Society of
+Kazan University, 15:135–156, 1906 (In Russian).</p>
+<p>[5] Matt Ball, Ed Jackson, and Rosalia Linfield. ST202 Stochastic Pro-
+cesses, Lecture Notes, University of Warwick. 2022.</p>
+<p>[6] Charles Grinstead and Laurie J Snell. Introduction to Probability.
+American Mathematical Society, 1997.</p>
+<p>[7] S. U. Pillai, T. Suel, and S. Cha. “The Perron-Frobenius theorem:
+Some of its applications”. IEEE Signal Processing Magazine, 22:63–64,
+2005.</p>
+<p>[8] Lawrence R. Rabiner. “A tutorial on hidden Markov models and se-
+lected applications in speech recognition”. Proceedings of the IEEE,
+77:257–286, 1989.</p>
+<p>[9] Leonard E. Baum. “An inequality and associated maximization tech-
+nique in statistical estimation for probabilistic functions of Markov pro-
+cesses”. Inequalities, 3:1–8, 1972.</p>
+<p>[10] Daniel Jurafsky and James H. Martin. “Hidden Markov Models”.
+Speech and Language Processing, pages 7–10, 2018.</p>
+<p>[11] Andrew Viterbi. “Error bounds for convolutional codes and an asymp-
+totically optimum decoding algorithm”. IEEE transactions on Infor-
+mation Theory, 13:260–269, 1967.</p>
+<p>[12] Bing Liu. Sentiment Analysis: Mining Opinions, Sentiments, and Emo-
+tions. Cambridge University Press, 2020.</p>
+<!-- raw HTML omitted -->
 
 </section>
 

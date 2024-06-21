@@ -6,7 +6,15 @@
         <description>Recent content in Posts on Jamie Winter</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
-        <lastBuildDate>Thu, 20 Jun 2024 11:17:01 +0100</lastBuildDate><atom:link href="https://jamierwinter.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 21 Jun 2024 01:01:40 +0100</lastBuildDate><atom:link href="https://jamierwinter.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>An Introduction to the Rado Graph</title>
+        <link>https://jamierwinter.github.io/post/the-rado-graph/</link>
+        <pubDate>Fri, 21 Jun 2024 01:01:40 +0100</pubDate>
+        
+        <guid>https://jamierwinter.github.io/post/the-rado-graph/</guid>
+        <description>&lt;img src="https://jamierwinter.github.io/img/Rado_graph.png" alt="Featured image of post An Introduction to the Rado Graph" /&gt;</description>
+        </item>
+        <item>
         <title>Analysing the Efficiency of First Year Maths Modules with Graphs</title>
         <link>https://jamierwinter.github.io/post/graphing_first_year_modules/</link>
         <pubDate>Thu, 20 Jun 2024 11:17:01 +0100</pubDate>
@@ -34,15 +42,119 @@
         <description>&lt;img src="https://jamierwinter.github.io/img/HMM.png" alt="Featured image of post Hidden Markov Models and their Applications" /&gt;&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;Welcome to my first blog post. I am an incoming 4th year MMath Mathematics student at the University of Warwick. As such, in my 2nd year I completed an essay, titled Hidden Markov Models and their Applications. To a large extent, this post will be a writeup of that essay.&lt;/p&gt;
 &lt;h1 id=&#34;1-introduction&#34;&gt;1: Introduction
-&lt;/h1&gt;&lt;p&gt;In 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&amp;rsquo;s Weak Law of Large Numbers (WLLN) to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory.&lt;/p&gt;
-&lt;h2 id=&#34;the-weak-law-of-large-numbers&#34;&gt;The Weak Law of Large Numbers
-&lt;/h2&gt;&lt;p&gt;Suppose $X_1, X_2,\dots$ are independent and identically distributed random variables with finite mean $\mu$ and variance $\sigma^2$, then the sample mean ${\overline{X}_n}\coloneqq \frac{1}{n}(X_1 + \dots + X_n)$  converges to $\mu$ in probability as $n\rightarrow\infty$.&lt;/p&gt;
-&lt;p&gt;Nekrasov (incorrectly) claimed that independence was not just a sufficient condition for the WLLN to hold, but also a necessary one. That is, if a sequence of random variables were to conform to the WLLN, then the independence of these random variables would be guaranteed as a consequence. Since contemporary data representative of human decision-making, such as crime statistics, appeared to follow the WLLN, Nekrasov argued that human decision-making and actions must be independent, and thus in some sense expressions of free will.&lt;/p&gt;
-&lt;p&gt;Andrey Markov, who was, importantly, secular, lambasted this claim, describing Nekrasov&amp;rsquo;s work as &amp;ldquo;an abuse of mathematics&amp;rdquo;. However, Markov&amp;rsquo;s grievances weren&amp;rsquo;t rooted in any ideological or theological differences, but rather Nekrasov&amp;rsquo;s assumption that independence was necessary for the WLLN to hold, which he set out to disprove by providing a counterexample; the result&amp;mdash; the eponymous Markov chain.&lt;/p&gt;
+&lt;/h1&gt;&lt;p&gt;In 1902, the Russian Orthodox mathematician Pavel Nekrasov used Bernoulli&amp;rsquo;s Weak Law of Large Numbers (WLLN) &lt;strong&gt;[1]&lt;/strong&gt; to claim that humans have free will, drawing comparisons between expressions of free will and independent events within probability theory &lt;strong&gt;[2]&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Weak Law of Large Numbers:&lt;/strong&gt; &lt;em&gt;Suppose $X_1, X_2,\dots$ are independent and identically distributed random variables with finite mean $\mu$ and variance $\sigma^2$, then the sample mean ${\overline{X}_n}\coloneqq \frac{1}{n}(X_1 + \dots + X_n)$  converges to $\mu$ in probability as $n\rightarrow\infty$.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Nekrasov (incorrectly) claimed that independence was not just a sufficient condition for the WLLN to hold, but also a necessary one. That is, if a sequence of random variables were to conform to the WLLN, then the independence of these random variables would be guaranteed as a consequence. Since contemporary data representative of human decision-making, such as crime statistics, appeared to follow the WLLN &lt;strong&gt;[3]&lt;/strong&gt;, Nekrasov argued that human decision-making and actions must be independent, and thus in some sense expressions of free will.&lt;/p&gt;
+&lt;p&gt;Andrey Markov, who was, importantly, secular, lambasted this claim, describing Nekrasov&amp;rsquo;s work as &amp;ldquo;an abuse of mathematics&amp;rdquo;. However, Markov&amp;rsquo;s grievances weren&amp;rsquo;t rooted in any ideological or theological differences, but rather Nekrasov&amp;rsquo;s assumption that independence was necessary for the WLLN to hold, which he set out to disprove by providing a counterexample; the result&amp;mdash; the eponymous Markov chain &lt;strong&gt;[4]&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;What emerged as a mere counterexample to settle a debate in mathematical theology has since been rigorously studied and adapted, resulting in the development of a multitude of &amp;ldquo;Markov Models&amp;rdquo;, of which one of the most important is known as the hidden Markov model (HMM), which today has applications across data science, linguistics, epidemiology, finance, and physics. HMMs have also been a foundational and widely used technique in AI research for several decades, meaning that over 100 years since their conception, Markov chains still have theological relevance, as humanity looks to &amp;lsquo;play God&amp;rsquo; through the development of artificial intelligence.&lt;/p&gt;
 &lt;p&gt;In this essay, I will first define the concept of a Markov chain (assuming a brief familiarity with state transition diagrams) and develop the necessary theory for us to then adapt this into the hidden Markov model, which we will study for the remainder of the essay.&lt;/p&gt;
 &lt;h1 id=&#34;2-markov-chains&#34;&gt;2: Markov Chains
-&lt;/h1&gt;&lt;!-- raw HTML omitted --&gt;
+&lt;/h1&gt;&lt;p&gt;From its origins in the WLLN, we know that a Markov chain is going to look like a sequence of random variables. We now formalise this notion. Throughout this section we will closely follow the definitions provided in ST202 Stochastic Processes &lt;strong&gt;[5]&lt;/strong&gt; (a module offered by Warwick University&amp;rsquo;s stats department).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Stochastic Processes:&lt;/strong&gt; &lt;em&gt;A stochastic process is a family $\{ X_i : i \in \mathcal{T} \}$ of random variables, where $\mathcal{T}$ is an indexing set. When $\mathcal{T}$ has finite or countably infinite cardinality, we say ${X_i:i \in \mathcal{T}}$ is a \emph{discrete-time stochastic process}.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Since in this essay we will always use $\mathbb{N}_0$ as our indexing set, we will from now denote a stochastic process by $(X_n)_{n \geq 0}$. We will use $I$ to denote the state space for each $X_n$, and refer to a given $i \in I$ as a &lt;em&gt;state&lt;/em&gt;. By default these state spaces will be labelled ${1,2,\dots m}$ in the case $\lvert I \rvert~=~m \in \mathbb{N}$ and ${1,2,\dots}$ when $I$ is infinite. Finally, given a stochastic process $(X_n)_{n \geq 0}$, $n \in \mathbb{N}$ and some states $i$ and $j$, we will denote the probability of the stochastic process moving from the state $i$ to $j$ by $P_{ij}$. That is, $P_{ij} \coloneqq \mathbb{P}(X_{n+1}=j \mid X_n=i)$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Markov Property:&lt;/strong&gt; &lt;em&gt;A stochastic process $(X_n)_{n \geq 0}$ is said to have the Markov property if $\forall n \in \mathbb{N}$, and for any choice of states $i_0,\dots,i_{n+1} \in I$ we have
+$$\mathbb{P}(X_{n+1}\hspace{-0.1cm}=i_{n+1} \mid X_n\hspace{-0.1cm}=i_n,\dots,X_1=i_1,X_0=i_0)=\mathbb{P}(X_{n+1}=i_{n+1} \mid X_n=i_n)$$ whenever the involved conditional probabilities are defined.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Markov Chains:&lt;/strong&gt; &lt;em&gt;A discrete-time stochastic process $(X_n)_{n \geq 0}$ with state space $I$ is called a Markov chain if:&lt;/em&gt;&lt;br&gt;
+i.) &lt;em&gt;$(X_n)_{n \geq 0}$ has the Markov property,&lt;/em&gt;&lt;br&gt;
+ii.) &lt;em&gt;$\sum_{j \in I}P_{ij}=1$ $\forall i \in I$.&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;When $\lvert I \rvert &amp;lt; \lvert \mathbb{N} \rvert$ we refer to the Markov chain $(X_n)_{n \geq 0}$ as \emph{finite}.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Intuitively, the definition of the Markov property tells us that, given a Markov chain $(X_n)_{n \geq 0}$ in some state at time n (i.e. $X_n=i_n$), the next state the chain enters depends solely on $X_n$ rather than any previous states.&lt;/p&gt;
+&lt;h3 id=&#34;example-a-simple-weather-model&#34;&gt;Example: A Simple Weather Model
+&lt;/h3&gt;&lt;p&gt;We consider a simple weather model for a town, where on any given day the weather is in one of three states: 1.) &amp;ldquo;Sunny&amp;rdquo;, 2.) &amp;ldquo;Cloudy&amp;rdquo;, 3.) &amp;ldquo;Rainy&amp;rdquo;. If the weather is sunny on a given day, it will be sunny the next with probability 0.6, cloudy with probability 0.3, or rainy with probability 0.1. Similarly, if it is cloudy on a given day, it will be sunny the next with probability 0.2, cloudy with probability 0.4, or rainy with probability 0.4. Finally, if it is rainy on a given day then it&amp;rsquo;ll be cloudy the next with probability 0.6 or rainy with probability 0.4.&lt;/p&gt;
+&lt;p&gt;This can be represented by a Markov chain because the probability of the weather moving from one state to another only depends on the current weather state (property i), and the sum of the probabilities of moving from a given state to each other state is 1 (property ii). These two properties are encoded within the definition of a state transition diagram, and so we have a correspondence between state transition diagrams and Markov chains.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://jamierwinter.github.io/img/HMM_1.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Representation of aforementioned example by a Markov chain&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;The state transition diagram used above shows us the three possible states our Markov chain can be in, as well as the probabilities of moving between each of these states over a single time-step, which we refer to as \emph{transition probabilities}. In this instance, we take the state space $I={1,2,3}$, corresponding to the &amp;ldquo;Sunny&amp;rdquo;, &amp;ldquo;Cloudy&amp;rdquo;, and &amp;ldquo;Rainy&amp;rdquo; states respectively.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Transition Matrices:&lt;/strong&gt; &lt;em&gt;Given a Markov chain $(X_n)_{n \geq 0}$ with finite state space $I$ such that $\lvert I \rvert = m$, we define its stochastic matrix or transition matrix as the $m\times m$ matrix $P$ with&lt;/em&gt;
+$$ P \coloneqq
+\begin{pmatrix}
+P_{11} &amp;amp; P_{12} &amp;amp; \cdots &amp;amp; P_{1m} \\
+P_{21} &amp;amp; P_{22} &amp;amp; \cdots &amp;amp; P_{2m} \\
+\vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \\
+P_{m1} &amp;amp; P_{m2} &amp;amp; \cdots &amp;amp; P_{mm}
+\end{pmatrix} $$&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;where $P_{ij} = \mathbb{P}(X_{m+1}=j \mid X_m=i)$ as before.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Referring back to the previous example, we can see that the stochastic matrix for the above state transition diagram is given by
+\begin{equation*}
+P =
+\begin{pmatrix}
+0.6 &amp;amp; 0.3 &amp;amp; 0.1 \\
+0.2 &amp;amp; 0.4 &amp;amp; 0.4 \\
+0 &amp;amp; 0.6 &amp;amp; 0.4
+\end{pmatrix}
+\end{equation*}&lt;/p&gt;
+&lt;h3 id=&#34;the-initial-distribution-of-a-markov-chain&#34;&gt;The Initial Distribution of a Markov Chain
+&lt;/h3&gt;&lt;p&gt;So far we have related the state of a Markov chain a time $n$ to its state at time $n+1$, however right now we don&amp;rsquo;t have a good notion of what state the chain starts in. We introduce the notion of an &amp;ldquo;initial distribution&amp;rdquo; to address this.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Initial distributions:&lt;/strong&gt; &lt;em&gt;The row vector $\lambda=[\lambda_1,\dots,\lambda_m]$ is called an initial distribution of a Markov chain $(X_n)_{n \geq 0}$ with $\lvert I \rvert = m$ if:&lt;/em&gt;&lt;br&gt;
+i.) &lt;em&gt;$\sum_{i=1}^m {\lambda}_i=1$&lt;/em&gt;,&lt;br&gt;
+ii.) &lt;em&gt;${\lambda}_i \geq 0$ for all $i \in I$&lt;/em&gt;,&lt;br&gt;
+iii.) &lt;em&gt;$X_0 \sim \lambda$. i.e. $\mathbb{P}(X_0=i)=\lambda_i$  $\forall i \in I$&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;For example, consider the Markov chain $(X_n)_{n \geq 0}$ with $I={1,2}$ and corresponding stochastic matrix $P$ and initial distribution $\lambda$ given by
+\begin{equation*}
+P =
+\begin{pmatrix}
+0 &amp;amp; 1 \
+2/5 &amp;amp; 3/5 \
+\end{pmatrix}
+\hspace{1cm}
+\lambda=
+\begin{bmatrix}
+\frac{2}{3} &amp;amp; \frac{1}{3}
+\end{bmatrix}
+\end{equation*}
+Suppose we want to find $\mathbb{P}(X_2=1)$. Noting that $\mathbb{P}(X_0=1) = \frac{2}{3}$ and $\mathbb{P}(X_0=2) = \frac{1}{3}$ from our initial distribution $\lambda$, we proceed as follows, first applying the Law of Total Probability:
+\begin{align*}
+\mathbb{P}(X_2=1)
+&amp;amp;= \mathbb{P}(X_2=1 \mid X_1=1)\mathbb{P}(X_1=1) + \mathbb{P}(X_2=1 \mid X_1=2)\mathbb{P}(X_1=2)\\
+&amp;amp;=P_{1,1}\mathbb{P}(X_1=1)+ P_{2,1}\mathbb{P}(X_1=2)\\
+&amp;amp;=\frac{2}{5}\mathbb{P}(X_1=2)\\
+&amp;amp;=\frac{2}{5}(\mathbb{P}(X_1\hspace{-0.1cm}=2 \mid X_0\hspace{-0.1cm}= 1)\mathbb{P}(X_0\hspace{-0.1cm}=1) + \mathbb{P}(X_1\hspace{-0.1cm}=2 \mid X_0\hspace{-0.1cm}=2)\mathbb{P}(X_0\hspace{-0.1cm}=2))\\
+&amp;amp;=\frac{2}{5}(P_{1,2}\mathbb{P}(X_0=1) + P_{2,2}\mathbb{P}(X_0=2))\\
+&amp;amp;=\frac{2}{5}(\frac{2}{3}\cdot1+\frac{3}{5}\cdot\frac{1}{3})\\
+&amp;amp;=\frac{26}{75}
+\end{align*}&lt;/p&gt;
+&lt;h3 id=&#34;the-stationary-distribution-of-a-markov-chain&#34;&gt;The Stationary Distribution of a Markov Chain
+&lt;/h3&gt;&lt;p&gt;lorem ipsum&lt;/p&gt;
+&lt;h1 id=&#34;references&#34;&gt;References
+&lt;/h1&gt;&lt;p&gt;[1] Krys Latuszynski, Alice Kirichenko, Anthony Lee, and Wilfrid S
+Kendall. ST220 Introduction to Mathematical Statistics, Lecture Notes,
+University of Warwick. 2022.&lt;/p&gt;
+&lt;p&gt;[2] Pavel Nekrasov. The Philosophy and Logic of Science of Mass Phenom-
+ena in Human Activity. Moscow, 1902 (In Russian).&lt;/p&gt;
+&lt;p&gt;[3] Brian Hayes. “First links in the Markov chain”. American Scientist,
+101:92–96, 2013.&lt;/p&gt;
+&lt;p&gt;[4] A. A. Markov. “Extension of the law of large numbers to dependent
+quantities”. Proceedings of the Physical and Mathematical Society of
+Kazan University, 15:135–156, 1906 (In Russian).&lt;/p&gt;
+&lt;p&gt;[5] Matt Ball, Ed Jackson, and Rosalia Linfield. ST202 Stochastic Pro-
+cesses, Lecture Notes, University of Warwick. 2022.&lt;/p&gt;
+&lt;p&gt;[6] Charles Grinstead and Laurie J Snell. Introduction to Probability.
+American Mathematical Society, 1997.&lt;/p&gt;
+&lt;p&gt;[7] S. U. Pillai, T. Suel, and S. Cha. “The Perron-Frobenius theorem:
+Some of its applications”. IEEE Signal Processing Magazine, 22:63–64,
+2005.&lt;/p&gt;
+&lt;p&gt;[8] Lawrence R. Rabiner. “A tutorial on hidden Markov models and se-
+lected applications in speech recognition”. Proceedings of the IEEE,
+77:257–286, 1989.&lt;/p&gt;
+&lt;p&gt;[9] Leonard E. Baum. “An inequality and associated maximization tech-
+nique in statistical estimation for probabilistic functions of Markov pro-
+cesses”. Inequalities, 3:1–8, 1972.&lt;/p&gt;
+&lt;p&gt;[10] Daniel Jurafsky and James H. Martin. “Hidden Markov Models”.
+Speech and Language Processing, pages 7–10, 2018.&lt;/p&gt;
+&lt;p&gt;[11] Andrew Viterbi. “Error bounds for convolutional codes and an asymp-
+totically optimum decoding algorithm”. IEEE transactions on Infor-
+mation Theory, 13:260–269, 1967.&lt;/p&gt;
+&lt;p&gt;[12] Bing Liu. Sentiment Analysis: Mining Opinions, Sentiments, and Emo-
+tions. Cambridge University Press, 2020.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
 </description>
         </item>
         
